@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <title>.text() 메소드</title>
+   <script src="http://code.jquery.com/jquery.min.js"></script>
+   <script type="text/javascript">
+   //<![CDATA[
+   $(function(){
+    /*  1.h1요소에 텍스트를 다음과 같이 넣어주세요
+         "제목-".text()메소드*/
+         $("h1").text("제목-.text()메소드");
+         //2. h2요소의 텍스트를 가져와 alert()으로 출력하세요.
+
+         var content = $("h2").text();
+         window.alert(content);
+
+   });
+      
+   //]]>
+   </script>
+</head>
+<body>
+   <div id="wrap">
+      <header>
+         <h1></h1>
+         <h2><span>요소의 텍스트 내용만 가져와요</span></h2>
+      </header>
+   </div>
+</body>
+</html>

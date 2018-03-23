@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <title>index() 메소드를 이용한 인덱스번호 추출</title>
+   <style type="text/css">
+      ul,ol,li{list-style:none;}
+      a:link{text-decoration:none;}
+      a:hover{text-decoration:underline;}
+      
+      #wrap{
+         width:800px;
+         margin:0 auto;
+         text-align:center;
+      }
+      
+      header>h1,
+      section>h2,
+      footer>address{
+         line-height:80px;
+         font-size:30px;
+      }
+      
+      section li{
+         height:50px;
+         margin-bottom:10px;
+         font-size:20px;
+         line-height:50px;
+      }
+      
+      section li{background-color:#dedede;}
+      section li:nth-child(odd){background-color:pink;}
+      
+      section span{
+         color:#f00;
+         font-size:30px;
+      }
+   </style>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+   <script type="text/javascript">
+   //<![CDATA[
+      $(document).ready(function(){
+      
+      /*1.클릭한 요소의 텍스트 내용을 가져온다.
+      2.가져온 내용에 "~을 시청했습니다~!"를 추가해서
+      3.해당요소에 삽입한다*/
+
+      var $ind = $(".drama>li");
+      $ind.click(function(){
+         var title= $(this).text()+"을 시청했습니다~!"
+          $(this).text(title);
+          //현재 선택된 li요소의 인덱스 번호 출력
+          var idx=$(this).index();//친형제관계일때만 효과가 있음 n촌 관계에서는 효과가 없음
+          //이번에 클릭한 요소의 인덱스 번호
+          $(".drama+p>span").text(idx)
+
+      });
+                
+      $(".jquery>li>a").click(function(){
+        var t=$(this).text()+"입니다"
+        $(this).text(t);
+        //var id=$(this).parent().index();
+        //이 방식은 n촌 관계에서도 효과가 있음 우리는 이방식을 적극적으로 사용
+        var id= $(".jquery>li>a").index($(this))
+        console.log(id);
+        $(".jquery+p>span").text(id);
+      return false;
+         
+      });
+          
+         
+      });//준비핸들러
+   //]]>
+   </script>
+</head>
+<body>
+   <div id="wrap">
+      <header>
+         <h1>.click() 메소드로 보는 최근 인기 드라마</h1>
+      </header>
+      <section>
+         <h2>방송리스트</h2>
+         <ol class="drama">
+            <li>황금빛 내인생</li>
+            <li>태양의 후예</li>
+            <li>미생</li>
+            <li>대장금</li>
+            <li>시크릿가든</li>
+         </ol>
+         <p>현재 선택된 li 의 index = <span></span></p>
+      </section>
+      <hr />
+      <section>
+         <h2>제이쿼리 메소드의 분류</h2>
+         <ul class="jquery">
+            <li><a href="#">셀렉팅 메소드</a></li>
+            <li><a href="#">이벤트 메소드</a></li>
+            <li><a href="#">내용조작 메소드</a></li>
+            <li><a href="#">이펙트 효과 메소드</a></li>
+         </ul>
+         <p>현재 선택된 li>a 의 index = <span></span></p>
+      </section>
+      <footer>
+         <address>스마트웹</address>
+      </footer>
+   </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

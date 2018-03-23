@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title>.css( ) 메소드를 이용한 스타일 적용</title>
+	<style>
+		*{}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("strong").css({
+				"color" : "blue",
+				"font-size" : "24px",
+				"font-weight" : "800"
+			});
+
+			$("em").css({
+				"background-color":"#ff0"
+				"font-weight" : "800"
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<h1>세계 여러나라의 인사말</h1>
+	<dl>
+		<dt><strong>토속방언</strong> 버전</dt>
+		<dd class="ko">한국 - 식사하셧습니까? 하모~</dd>
+		<dd class="cn">중국 - 츠팔러마? 츠팔러</dd>
+		<dd class="ff">
+			<strong>부시족</strong> 리얼싸운드 - 
+			<strong>일렌트로캉막따따라바오리도? 따따라!</strong>		
+		</dd>
+	</dl>
+	
+	<hr />
+	
+	<h2>웹퍼블리셔로 가는길</h2>
+	<ul>
+		<li>HTML5 & CSS3</li>
+		<li>자바스크립트</li>
+		<li><em>jQuery</em></li>
+		<li>포토샵/일러스트</li>
+		<li><em>웹디자인기능사</em></li>
+	</ul>
+</body>
+</html>
